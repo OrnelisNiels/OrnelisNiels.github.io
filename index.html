@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="icon" type="image/x-icon" href="Assets/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="script/handledata.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+    <div class="c-klein js-klein" id="false"></div>
+    <div class="c-collection js-page">
+      <div class="loader"></div>
+      <div class="c-head">
+        <div class="c-search-container">
+          <input
+            class="c-search js-search"
+            type="text"
+            placeholder="Search for country, currency or language"
+          />
+          <button class="c-btn js-search-btn">
+            <span class="material-icons md-40 c-search__icon"> search </span>
+          </button>
+        </div>
+        <p class="c-incorrect js-message"></p>
+      </div>
+      <div class="c-head-container">
+        <div class="c-counter js-counter">Count</div>
+        <div class="c-continents">
+          <button class="c-btn-continent u-is-selected js-filter" filter="all">
+            <div class="c-continents__item">All</div>
+          </button>
+          <button class="c-btn-continent js-filter" filter="africa">
+            <div class="c-continents__item">Africa</div>
+          </button>
+          <button class="c-btn-continent js-filter" filter="america">
+            <div class="c-continents__item">America</div>
+          </button>
+          <button class="c-btn-continent js-filter" filter="asia">
+            <div class="c-continents__item">Asia</div>
+          </button>
+          <button class="c-btn-continent js-filter" filter="europe">
+            <div class="c-continents__item">Europe</div>
+          </button>
+          <button class="c-btn-continent js-filter" filter="oceania">
+            <div class="c-continents__item">Oceania</div>
+          </button>
+        </div>
+           <label>
+             <button class="c-btn-dark">
+             <input class='toggle-checkbox js-mode' type='checkbox'></input>
+
+               <div class='toggle-slot'>
+                 <div class='sun-icon-wrapper'>
+                   <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                  </div>
+                  <div class='toggle-button'></div>
+                  <div class='moon-icon-wrapper'>
+                    <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                  </div>
+                </div>
+              </button>
+            </label>
+          </div>
+      <div class="c-container">
+        <div class="canvas js-canvas">
+          <!-- <div class="cell cell--1 js-cell"></div> -->
+        </div>
+      </div>
+    </div>
+    <div class="c-popup js-popup">
+      <div class="c-popup-content js-popup-content">
+        <span class="material-icons c-close js-close">close</span>
+      </div>
+    </div>
+  </body>
+</html>
