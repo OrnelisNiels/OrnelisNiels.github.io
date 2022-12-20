@@ -78,17 +78,14 @@ const calculatePopulationSubRegion = function (jsonObject) {
   for (let land of jsonObject) {
     globalSubRegionCounter = globalSubRegionCounter + land.population;
   }
-  // console.warn(globalSubRegionCounter);
   showGraph = true;
+  console.warn('APEN' + globalSubRegionCounter);
 };
 
 const calculatePopulationRegion = function (jsonObject, region) {
   globalRegionCounter = 0;
   for (let land of jsonObject) {
     globalRegionCounter = globalRegionCounter + land.population;
-  }
-  if (showGraph == true) {
-    drawChart();
   }
 };
 
@@ -269,6 +266,15 @@ const showLand = function (jsonObject) {
   }
 
   listenToClose();
+  window.setTimeout(function () {
+    if (showGraph == true) {
+      drawChart();
+    } else {
+      console.warn(showGraph);
+      const ctxText = document.querySelector('.js-chartText');
+      ctxText.innerHTML = 'No data available';
+    }
+  }, 300);
 };
 
 const showData = function (jsonObject) {
@@ -455,6 +461,7 @@ const drawChart = function () {
   const ctx = document.querySelector('.myChart');
   const ctxText = document.querySelector('.js-chartText');
   if (globalSubRegion != undefined) {
+    console.warn(globalSubRegionCounter);
     if (globalCountryCounter > 300000000) {
       if (window.innerWidth >= 768) {
         displayBool = true;
@@ -675,6 +682,7 @@ const drawChart = function () {
   } else {
     ctxText.innerHTML = 'No data available';
   }
+  showGraph = false;
 };
 const init = function () {
   console.log('DOM geladen');
