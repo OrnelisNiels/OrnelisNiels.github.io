@@ -78,8 +78,8 @@ const calculatePopulationSubRegion = function (jsonObject) {
   for (let land of jsonObject) {
     globalSubRegionCounter = globalSubRegionCounter + land.population;
   }
+  console.warn(globalSubRegionCounter);
   showGraph = true;
-  console.warn('APEN' + globalSubRegionCounter);
 };
 
 const calculatePopulationRegion = function (jsonObject, region) {
@@ -267,14 +267,15 @@ const showLand = function (jsonObject) {
 
   listenToClose();
   window.setTimeout(function () {
+    console.log(
+      'AZEJJEZRAJKLMREZKLJMDSFJKLMDSQFKLJMDFLJKDQF JKLKLJSQQDFJKLQDSFJKLM DSQFJKL MQ LKJDSF QJILMLMJ '
+    );
     if (showGraph == true) {
       drawChart();
     } else {
       console.warn(showGraph);
-      const ctxText = document.querySelector('.js-chartText');
-      ctxText.innerHTML = 'No data available';
     }
-  }, 300);
+  }, 250);
 };
 
 const showData = function (jsonObject) {
