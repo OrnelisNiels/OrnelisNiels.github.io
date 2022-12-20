@@ -331,6 +331,7 @@ button.c-btn:focus{
 .c-counter{
     line-height: 22px;
     position: relative;
+    color: var(--text-color);
     /* left: 12vw; */
 }
 
