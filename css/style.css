@@ -935,3 +935,17 @@ button.c-btn-cell:focus{
 .u-max-height-135{
     max-height: 135px;
 }
+
+.u-dark{
+    --white: white;
+    --dark: #212427;
+    --text-color: white;
+    --accent-color: #2badad;
+    --btn-cell-color: #212121;
+    --background-color: #141414;
+    --bold-text-color: #2badad;
+    --scrollbarTrack-color: #212427;
+    --popupcontent-color: #212427;
+    --searchBar-color: #2badad;
+    --hover-color: #00ffff;
+}

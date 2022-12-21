@@ -13,6 +13,15 @@ let chart;
 let dark = false;
 let displayBool;
 let textContentLand;
+
+function onAppearing() {
+  onresize = (event) => {
+    const ctx = document.querySelector('.myChart');
+    chart.destroy();
+    drawChart();
+  };
+}
+
 const showLandenFunction = function (jsonObject) {
   htmlLand = document.querySelector('.js-canvas');
   htmlLand.innerHTML = '';
@@ -78,7 +87,6 @@ const calculatePopulationSubRegion = function (jsonObject) {
   for (let land of jsonObject) {
     globalSubRegionCounter = globalSubRegionCounter + land.population;
   }
-  console.warn(globalSubRegionCounter);
   showGraph = true;
 };
 
@@ -210,7 +218,6 @@ const showLand = function (jsonObject) {
 
   var h = window.innerWidth;
   if (h >= 1200) {
-    console.log('GROOOOOOOOOOOOOOOOT');
     html += `<div class="c-popupTitle u-x-span-2 c-content"><div class="c-line-title"></div><p class="c-land-name"><b>${jsonObject[0].name.common}</b></p><div class="c-line-title"></div></div>`;
     if (jsonObject[0].capital == null) {
       jsonObject[0].capital = 'No capital';
@@ -227,7 +234,6 @@ const showLand = function (jsonObject) {
 
     html += `<span class="material-icons c-close js-close">close</span>`;
   } else {
-    console.log('klein');
     html += `<div class="u-x-span-2"><p class="c-land-name"><b>${jsonObject[0].name.common}</b></p></div>`;
     if (jsonObject[0].capital == null) {
       jsonObject[0].capital = 'No capital';
@@ -250,7 +256,7 @@ const showLand = function (jsonObject) {
   var p = document.querySelectorAll('.u-textParagraphStart');
   var l = document.querySelectorAll('.c-line-right');
   for (let i = 0; i < p.length; i++) {
-    console.log(p[i].offsetHeight);
+    // console.log(p[i].offsetHeight);
     for (let j = 0; j < l.length; j++) {
       if (p[i].offsetHeight > 19) {
         l[i].style.height = `${p[i].offsetHeight}px`;
@@ -267,15 +273,15 @@ const showLand = function (jsonObject) {
 
   listenToClose();
   window.setTimeout(function () {
-    console.log(
-      'AZEJJEZRAJKLMREZKLJMDSFJKLMDSQFKLJMDFLJKDQF JKLKLJSQQDFJKLQDSFJKLM DSQFJKL MQ LKJDSF QJILMLMJ '
-    );
     if (showGraph == true) {
       drawChart();
     } else {
-      console.warn(showGraph);
+      document.querySelector('.js-chartText').innerHTML = 'No data available';
+      if (window.innerWidth >= 1200) {
+        document.querySelector('.js-chartText').style.margin = '0 0 0 90px';
+      }
     }
-  }, 250);
+  }, 210);
 };
 
 const showData = function (jsonObject) {
@@ -308,12 +314,12 @@ const listenToSearch = function () {
   let search = document.querySelector('.js-search');
   search.addEventListener('keypress', function (event) {
     if (event.key == 'Enter') {
-      getFilteredLanden(search.value);
+      getFilteredLanden(search.value.toLowerCase());
     }
   });
   let searchBtn = document.querySelector('.js-search-btn');
   searchBtn.addEventListener('click', function () {
-    getFilteredLanden(search.value);
+    getFilteredLanden(search.value.toLowerCase());
   });
 };
 
@@ -334,6 +340,7 @@ const listenToFilter = function () {
 const listenToClose = function () {
   htmlClose = document.querySelector('.js-close');
   htmlClose.addEventListener('click', function () {
+    showGraph = false;
     document.querySelector('.js-popup-content').style.opacity = 0;
     document.querySelector('.js-popup-content').style.transform = 'scale(0)';
     window.setTimeout(function () {
@@ -342,6 +349,7 @@ const listenToClose = function () {
   });
   window.addEventListener('keydown', function (event) {
     if (event.key == 'Escape') {
+      showGraph = false;
       document.querySelector('.js-popup-content').style.opacity = 0;
       document.querySelector('.js-popup-content').style.transform = 'scale(0)';
       window.setTimeout(function () {
@@ -372,6 +380,7 @@ const listenToMode = function () {
   let mode = document.querySelector('.js-mode');
   let btn = document.querySelector('.c-btn-dark');
   let root = document.querySelector(':root');
+  let darkmode = document.querySelector('.js-darkmode');
   let teller = 0;
   btn.addEventListener('click', function () {
     teller += 1;
@@ -385,14 +394,16 @@ const listenToMode = function () {
       dark = true;
       Chart.defaults.color = 'white';
       Chart.defaults.borderColor = 'rgba(255,	255,	255, 0.2)';
-      root.style =
-        '--white: white;--dark: #212427;--text-color: white;--accent-color: #2badad;--btn-cell-color: #212121;--background-color: #141414; --bold-text-color: #2badad; --scrollbarTrack-color: #212427; --popupcontent-color: #212427; --searchBar-color: #2badad; --hover-color: #00ffff;';
+      darkmode.classList.add('u-dark');
+      // root.style =
+      //   '--white: white;--dark: #212427;--text-color: white;--accent-color: #2badad;--btn-cell-color: #212121;--background-color: #141414; --bold-text-color: #2badad; --scrollbarTrack-color: #212427; --popupcontent-color: #212427; --searchBar-color: #2badad; --hover-color: #00ffff;';
     } else {
       dark = false;
       Chart.defaults.color = '#212427';
       Chart.defaults.borderColor = 'rgba(0,	0,	0, 0.1)';
-      root.style =
-        '--white: white;--dark: #212427;--text-color: #212427;--accent-color: #2badad;--btn-cell-color: white;--background-color: white; --bold-text-color: #2badad; --scrollbarTrack-color: #f1f1f1; --popupcontent-color: white; --searchBar-color: #212427; --hover-color: #2badad;';
+      darkmode.classList.remove('u-dark');
+      // root.style =
+      //   '--white: white;--dark: #212427;--text-color: #212427;--accent-color: #2badad;--btn-cell-color: white;--background-color: white; --bold-text-color: #2badad; --scrollbarTrack-color: #f1f1f1; --popupcontent-color: white; --searchBar-color: #212427; --hover-color: #2badad;';
     }
   });
   // mode.addEventListener('click', function () {
@@ -462,7 +473,6 @@ const drawChart = function () {
   const ctx = document.querySelector('.myChart');
   const ctxText = document.querySelector('.js-chartText');
   if (globalSubRegion != undefined) {
-    console.warn(globalSubRegionCounter);
     if (globalCountryCounter > 300000000) {
       if (window.innerWidth >= 768) {
         displayBool = true;
@@ -533,7 +543,7 @@ const drawChart = function () {
                   globalWorldPopulation,
                 ],
                 borderWidth: 1,
-                backgroundColor: 'rgba(43,	173,	173, 1)',
+                backgroundColor: 'rgba(0,	255,	255, 0.6)',
               },
             ],
           },
@@ -599,7 +609,7 @@ const drawChart = function () {
                 ],
                 borderWidth: 1,
                 minBarLength: 3,
-                backgroundColor: 'rgba(43,	173,	173, 1)',
+                backgroundColor: 'rgba(0,	255,	255, 0.6)',
               },
             ],
           },
@@ -683,7 +693,7 @@ const drawChart = function () {
   } else {
     ctxText.innerHTML = 'No data available';
   }
-  showGraph = false;
+  onAppearing();
 };
 const init = function () {
   console.log('DOM geladen');
