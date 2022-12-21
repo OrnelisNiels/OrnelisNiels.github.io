@@ -63,7 +63,7 @@ html {
 
 }
 
-::selection{
+::selection {
     background-color: var(--accent-color);
     color: var(--white);
 }
@@ -75,12 +75,12 @@ html {
 }
 
 body {
-    margin:0px;
+    margin: 0px;
     color: var(--dark);
     background-color: var(--background-color);
 }
 
-.c-collection{
+.c-collection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,28 +88,28 @@ body {
     padding: 0;
     /* background-color: var(--background-color); */
 }
-.c-head{
+
+.c-head {
     margin: 88px 0px;
 }
 
-.c-search-container{
+.c-search-container {
     position: relative;
-   border: 2px solid var(--searchBar-color);
-   height: 50px;
-   display: flex;
+    border: 2px solid var(--searchBar-color);
+    height: 50px;
+    display: flex;
     align-items: center;
     border-radius: 10px;
 }
 
-.c-search-container:hover{
+.c-search-container:hover {
     transform: scale(1.01);
     border: 2px solid var(--hover-color);
 }
 
-.c-search-container::selection {
-}
+.c-search-container::selection {}
 
-.c-search{
+.c-search {
     height: 50px;
     width: 480px;
     font-size: 20px;
@@ -120,11 +120,11 @@ body {
     color: var(--text-color)
 }
 
-input.c-search:focus{
+input.c-search:focus {
     outline: none;
 }
 
-.c-search__icon{
+.c-search__icon {
     /* position: absolute; */
     top: center;
     right: center;
@@ -144,14 +144,14 @@ input.c-search:focus{
     color: var(--hover-color);
 }
 
-button.c-btn{
+button.c-btn {
     padding: 0px;
     height: 50px;
     display: flex;
     align-items: center;
 }
 
-button.c-btn:hover{
+button.c-btn:hover {
     /* border: none;
     border-radius: 0px;
     cursor: pointer;
@@ -159,13 +159,13 @@ button.c-btn:hover{
     background-color: transparent;
 }
 
-button.c-btn:focus{
+button.c-btn:focus {
     border-radius: 0px;
     outline: none;
     background-color: transparent;
 }
 
-.c-container{
+.c-container {
     margin: 0px;
     /* min-height: 100vh; */
     display: flex;
@@ -201,7 +201,7 @@ button.c-btn:focus{
     border-radius: 20px;
     width: 300px;
     height: 200px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -210,10 +210,10 @@ button.c-btn:focus{
 
 
 
-.flag{
+.flag {
     /* position: absolute; */
     top: 20px;
-    right:center;
+    right: center;
     width: 60px;
     height: 38px;
     margin-left: 15px;
@@ -222,27 +222,27 @@ button.c-btn:focus{
     box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
 
-.c-cellText{
+.c-cellText {
     margin: 0px;
     /* position: absolute; */
     right: center;
     bottom: 50px;
     font-size: 25px;
-    color:var(--text-color);
+    color: var(--text-color);
 }
 
-.c-cellText--sub{
+.c-cellText--sub {
     margin: 0px;
     position: absolute;
     right: center;
     bottom: 40px;
     font-size: 0.875rem;
-    color:var(--text-color);
+    color: var(--text-color);
 }
 
-.c-popup{
+.c-popup {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
@@ -269,18 +269,18 @@ button.c-btn:focus{
     color: var(--text-color);
 }
 
-.c-close{
-    cursor: pointer; 
-    position: absolute;   
+.c-close {
+    cursor: pointer;
+    position: absolute;
     top: 20px;
     right: 20px;
 }
 
-.c-close:hover{
+.c-close:hover {
     transform: scale(1.2);
 }
 
-.c-land-name{
+.c-land-name {
     font-size: 1.875rem;
     margin: 0px 30px
 }
@@ -288,7 +288,7 @@ button.c-btn:focus{
 .c-content-cell {
     display: flex;
     /* margin: 10px; */
-    align-items: center; 
+    align-items: center;
     overflow: auto;
     min-height: 90px;
 }
@@ -315,33 +315,33 @@ button.c-btn:focus{
 }
 
 
-.c-chart{
+.c-chart {
     width: 100%;
     height: 100%;
 }
 
-.c-continents{
+.c-continents {
     display: flex;
 }
 
-.c-continents__item{
+.c-continents__item {
     margin-right: 5px;
 }
 
-.c-counter{
+.c-counter {
     line-height: 22px;
     position: relative;
     color: var(--text-color);
     /* left: 12vw; */
 }
 
-button.c-btn-continent:focus{
+button.c-btn-continent:focus {
     outline: none;
     color: white;
-    background-color:var(--accent-color);
+    background-color: var(--accent-color);
 }
 
-button{
+button {
     border: none;
     padding: 2px 10px;
     margin-right: 5px;
@@ -352,14 +352,16 @@ button{
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
 }
-button:hover{
-    background-color: var(--accent-color);;
-    color:white;
+
+button:hover {
+    background-color: var(--accent-color);
+    ;
+    color: white;
 }
 
 
 
-.c-btn-cell{
+.c-btn-cell {
     background-color: var(--btn-cell-color);
     border-radius: 20px;
     padding: 0px;
@@ -370,12 +372,13 @@ button.c-btn-cell:hover {
     transform: scale(1.05);
     background-color: transparent;
     color: var(--dark);
-} 
+}
 
-button.c-btn-cell:focus{
+button.c-btn-cell:focus {
     transform: scale(1.05);
     outline: none;
 }
+
 .loader {
     display: none;
     z-index: 100;
@@ -391,16 +394,18 @@ button.c-btn-cell:focus{
     /* Safari */
     animation: spin 1s ease-in-out infinite;
 }
-.c-btn-dark{
+
+.c-btn-dark {
     position: relative;
     padding: 0px;
     right: 0.5rem;
 }
-.c-btn-dark:focus{
+
+.c-btn-dark:focus {
     transform: scale(1.05);
 }
 
-.c-incorrect{
+.c-incorrect {
     color: red;
     margin: 0;
     margin-top: 5px
@@ -427,7 +432,7 @@ button.c-btn-cell:focus{
     }
 }
 
-.c-fade{
+.c-fade {
     transition: 0.1s all ease-in-out;
     opacity: 0;
 }
@@ -448,33 +453,35 @@ button.c-btn-cell:focus{
 }
 
 
-.c-b-counter{
-    color:var(--bold-text-color);
+.c-b-counter {
+    color: var(--bold-text-color);
 }
 
 @media (min-width: 320px) {
     .c-content-cell {
         min-height: auto;
     }
+
     .c-container {
-            width: 100vw;
-            height: 70vh;
-        }
+        width: 100vw;
+        height: 70vh;
+    }
 
-     .c-head{
-        margin: 50px 0px 35px 0px ;
-     }    
+    .c-head {
+        margin: 50px 0px 35px 0px;
+    }
 
-     .flag{
+    .flag {
         position: absolute;
         top: 20px;
         right: 20px;
-     }
-    .c-search
-    {
+    }
+
+    .c-search {
         width: 100%;
         font-size: 16px;
     }
+
     .c-search-container {
         width: 80vw;
     }
@@ -483,23 +490,25 @@ button.c-btn-cell:focus{
         font-size: 30px;
     }
 
-    .c-head-container{
+    .c-head-container {
         width: 88vw;
     }
-    .c-continents{
+
+    .c-continents {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .cell{
+
+    .cell {
         width: 80vw;
         height: 180px;
     }
 
-    .c-cellText{
+    .c-cellText {
         font-size: 1.25rem;
     }
 
-    .c-cellText--sub{
+    .c-cellText--sub {
         font-size: 0.75rem;
     }
 
@@ -521,7 +530,7 @@ button.c-btn-cell:focus{
 
     .c-popup-content {
         width: 90vw;
-        height:max-content;
+        height: max-content;
         border-radius: 10px;
         text-align: center;
         padding: 10px;
@@ -542,12 +551,13 @@ button.c-btn-cell:focus{
     .c-klein {
         display: none;
     }
+
     .toggle-checkbox {
         position: absolute;
         opacity: 0;
         cursor: pointer;
     }
-    
+
 
     .toggle-slot {
         position: relative;
@@ -557,7 +567,7 @@ button.c-btn-cell:focus{
         /* border: 2px solid var(--dark); */
         border-radius: 10rem;
         background-color: var(--white);
-        box-shadow:  0 0 4px rgba(0, 0, 0, 0.136), 0 2px 8px rgba(0, 0, 0, 0.168);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.136), 0 2px 8px rgba(0, 0, 0, 0.168);
         transition: background-color 250ms;
         cursor: pointer;
     }
@@ -578,7 +588,7 @@ button.c-btn-cell:focus{
 
     .toggle-checkbox:checked~.toggle-slot .toggle-button {
         box-shadow: inset 0px 0px 0px 0.75em var(--accent-color);
-        transform: translate(0.5rem, 0.5rem);        
+        transform: translate(0.5rem, 0.5rem);
     }
 
     .sun-icon {
@@ -620,13 +630,14 @@ button.c-btn-cell:focus{
         opacity: 1;
         transform: translate(2em, 0.5rem);
     }
+
     .toggle-slot {
         position: relative;
         bottom: 0.5rem;
         /* right: 0.5rem; */
         /* margin-top: -15px;
         margin-bottom: 15px; */
-        }
+    }
 
     .c-head-container {
         display: flex;
@@ -636,12 +647,13 @@ button.c-btn-cell:focus{
         flex-direction: column-reverse;
         margin-bottom: 0.375rem;
     }
-    .c-btn-dark{
+
+    .c-btn-dark {
         margin-top: -15px;
         margin-bottom: 15px;
         right: 0rem;
     }
-    
+
     .c-btn-dark:hover {
         background-color: transparent;
     }
@@ -654,50 +666,52 @@ button.c-btn-cell:focus{
 
 @media (min-width: 450px) {
     .canvas {
-            grid-template-columns: 1fr 1fr;
-        }
+        grid-template-columns: 1fr 1fr;
+    }
 
     .c-search-container {
         width: 60vw;
     }
+
     .cell {
         width: 40vw;
     }
 }
 
 @media (min-width: 576px) {
-    .canvas {
-    }
+    .canvas {}
 
-    .cell {
-
-    }
+    .cell {}
 }
 
 @media (min-width: 768px) {
     .c-content-cell {
-            min-height: auto;
-        }
+        min-height: auto;
+    }
+
     .canvas {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
     .c-search-container {
         width: 45vw;
     }
 
-    .flag{
+    .flag {
         top: 15px;
     }
-    .c-cellText--sub{
+
+    .c-cellText--sub {
         bottom: 20px
     }
 
     .cell {
         width: 25vw;
     }
+
     .c-popup {
         width: 100%;
-        height: 100%;      
+        height: 100vh;
     }
 
     .c-popup-content {
@@ -708,32 +722,34 @@ button.c-btn-cell:focus{
 }
 
 @media (min-width: 992px) {
-    .canvas {
+    .canvas {}
 
-    }
-
-    .c-cellText--sub{
+    .c-cellText--sub {
         bottom: 30px;
     }
 
     .c-cellText {
         font-size: 1.375rem;
     }
+
     .c-popup {
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
 
     .c-popup-content {
         width: 60vw;
         height: 45vh;
     }
-    .myChart{
+
+    .myChart {
         height: 5vh;
     }
+
     .c-counter {
         display: block;
     }
+
     .c-head-container {
         display: flex;
         flex-direction: row;
@@ -741,12 +757,14 @@ button.c-btn-cell:focus{
         justify-content: space-between;
         width: 82vw;
     }
+
     .toggle-slot {
         position: relative;
         bottom: 0;
         /* right: 0.5rem; */
         margin: 0;
     }
+
     .c-btn-dark {
         margin-top: 0;
         margin-bottom: 0;
@@ -755,14 +773,16 @@ button.c-btn-cell:focus{
 }
 
 @media (min-width: 1200px) {
-    .c-container{
+    .c-container {
         width: 95vw;
         height: 67vh;
     }
+
     .c-search-container {
         width: 40vw;
     }
-    .c-head{
+
+    .c-head {
         margin: 88px 0px;
     }
 
@@ -770,9 +790,11 @@ button.c-btn-cell:focus{
         grid-template-columns: 1fr 1fr 1fr 1fr;
 
     }
+
     .cell {
         width: 20vw;
     }
+
     .c-counter {
         /* left: 8vw; */
         color: var(--text-color);
@@ -785,36 +807,40 @@ button.c-btn-cell:focus{
 
     .c-popup {
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
 
     .c-popup-content {
         width: 60vw;
         height: 45vh;
     }
+
     .c-klein {
         display: flex;
     }
+
     .c-popupTitle {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .c-line-title{
+    .c-line-title {
         border-top: 4px solid var(--accent-color);
         width: 3vw;
         margin: 0 10px;
     }
 
-    .c-line-right{
+    .c-line-right {
         margin-right: 5px;
         border-right: 3px solid var(--accent-color);
         height: 1rem;
     }
+
     .c-head-container {
         width: 89vw;
     }
+
     .c-land-name {
         margin: 0px;
     }
@@ -838,7 +864,7 @@ button.c-btn-cell:focus{
     .c-search {
         font-size: 20px;
     }
-    
+
     .material-icons.md-40 {
         font-size: 40px;
     }
@@ -847,6 +873,7 @@ button.c-btn-cell:focus{
         width: 300px;
         height: 200px;
     }
+
     .c-counter {
         /* left: 13rem; */
     }
@@ -857,7 +884,7 @@ button.c-btn-cell:focus{
 
     .c-popup {
         width: 100%;
-        height: 100%;
+        height: 100vh;
     }
 
     .c-popup-content {
@@ -868,19 +895,21 @@ button.c-btn-cell:focus{
     .myChart {
         height: 25vh;
     }
-    .c-popupTitle{
+
+    .c-popupTitle {
         display: flex;
     }
+
     .c-head-container {
         width: 77vw;
     }
 }
 
-.u-x-span-2{
+.u-x-span-2 {
     grid-column: span 2;
 }
 
-.u-x-span-1{
+.u-x-span-1 {
     grid-column: span 1;
 }
 
@@ -888,55 +917,56 @@ button.c-btn-cell:focus{
     grid-row: span 6;
 }
 
-.u-y-span-2{
+.u-y-span-2 {
     grid-row: span 2;
 }
 
-.u-height-width-small{
+.u-height-width-small {
     width: 40px;
     height: 18px;
 }
 
-.u-center{
+.u-center {
     text-align: center;
 }
 
-.u-end{
+.u-end {
     justify-content: flex-end;
 }
 
-.u-justify-center{
+.u-justify-center {
     justify-content: center;
 }
 
-.u-width{
+.u-width {
     width: 300px;
 }
 
-.u-is-selected{
-    background-color: var(--accent-color);;
+.u-is-selected {
+    background-color: var(--accent-color);
+    ;
     color: white;
     transform: scale(1.0);
     transition: .2s ease transform;
 }
 
-.u-textParagraphStart{
+.u-textParagraphStart {
     text-align: start;
 }
 
-.u-textParagraphEnd{
+.u-textParagraphEnd {
     text-align: end;
 }
 
-.u-radius-50{
+.u-radius-50 {
     border-radius: 50px;
 }
 
-.u-max-height-135{
+.u-max-height-135 {
     max-height: 135px;
 }
 
-.u-dark{
+.u-dark {
     --white: white;
     --dark: #212427;
     --text-color: white;

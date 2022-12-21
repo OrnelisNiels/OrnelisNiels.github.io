@@ -341,30 +341,35 @@ const listenToClose = function () {
   htmlClose = document.querySelector('.js-close');
   htmlPopup = document.querySelector('.js-popup');
   htmlClose.addEventListener('click', function () {
-    showGraph = false;
+    // showGraph = false;
     document.querySelector('.js-popup-content').style.opacity = 0;
     document.querySelector('.js-popup-content').style.transform = 'scale(0)';
     window.setTimeout(function () {
       document.querySelector('.js-popup').style.display = 'none';
+      chart.destroy();
     }, 200); // timed to match animation-duration
   });
   window.addEventListener('keydown', function (event) {
     if (event.key == 'Escape') {
-      showGraph = false;
+      // showGraph = false;
       document.querySelector('.js-popup-content').style.opacity = 0;
       document.querySelector('.js-popup-content').style.transform = 'scale(0)';
       window.setTimeout(function () {
         document.querySelector('.js-popup').style.display = 'none';
+        chart.destroy();
       }, 200); // timed to match animation-duration
     }
   });
-  htmlPopup.addEventListener('click', function () {
-    showGraph = false;
-    document.querySelector('.js-popup-content').style.opacity = 0;
-    document.querySelector('.js-popup-content').style.transform = 'scale(0)';
-    window.setTimeout(function () {
-      document.querySelector('.js-popup').style.display = 'none';
-    }, 200); // timed to match animation-duration
+  htmlPopup.addEventListener('click', function (event) {
+    if (event.target == htmlPopup) {
+      // showGraph = false;
+      document.querySelector('.js-popup-content').style.opacity = 0;
+      document.querySelector('.js-popup-content').style.transform = 'scale(0)';
+      window.setTimeout(function () {
+        document.querySelector('.js-popup').style.display = 'none';
+        chart.destroy();
+      }, 200); // timed to match animation-duration
+    }
   });
 };
 
